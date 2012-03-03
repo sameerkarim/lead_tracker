@@ -1,14 +1,25 @@
-  <p>
-    <b>Title:</b>
-    <%= task.title %>
-  </p>
- 
-  <p>
-    <b>Description:</b>
-    <%= task.description %>
-  </p>
-
-  <p>
-    <b>Priority:</b>
-    <%= task.priority %>
-  </p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+			<th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <tbody>
+	    <% @contact.tasks.each do |task| %>
+	      <tr>
+	        <td><%= task.title %></td>
+					<td><%= task.description %></td>
+					<td><%= task.priority %></td>
+	        <td>
+	          <%= link_to 'Edit', '#', :class => 'btn btn-mini' %>
+	          <%= link_to 'Delete', [task.contact, task], 
+																	:confirm => 'Are you sure?', :method => :delete, 
+																	:class => 'btn btn-mini btn-danger' %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
