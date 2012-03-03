@@ -3,7 +3,9 @@ LeadTracker::Application.routes.draw do
   
   root :to => 'home#index'
 
-  resources :contacts
+  resources :contacts do
+    resources :tasks
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

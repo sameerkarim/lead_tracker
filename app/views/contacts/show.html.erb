@@ -30,6 +30,13 @@
   <%= @contact.notes %>
 </p>
 
+<h1>Tasks</h1>
+<%= render @contact.tasks %>
+
+<p>
+	<b><%= render "tasks/form" %></b><br>
+</p>
+
 <div class="form-actions">
   <%= link_to 'Back', contacts_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_contact_path(@contact), :class => 'btn' %>
