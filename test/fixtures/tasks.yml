@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  priority: MyText
+  target_date: 2012-03-03
+  actual_date: 2012-03-03
+  contact: 
+
+two:
+  title: MyString
+  description: MyText
+  priority: MyText
+  target_date: 2012-03-03
+  actual_date: 2012-03-03
+  contact: 
