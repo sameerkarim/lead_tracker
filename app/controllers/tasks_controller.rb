@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-
+  before_filter :signed_in_user
+  
   def index
     @contacts = current_user.contacts.all
   end
