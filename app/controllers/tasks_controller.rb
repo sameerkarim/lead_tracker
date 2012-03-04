@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
+
+  def index
+    @contacts = current_user.contacts.all
+  end
+
   def create
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_user.contacts.find(params[:contact_id])
     @task = @contact.tasks.create(params[:task])
     redirect_to contact_path(@contact)
   end
@@ -11,7 +16,7 @@ class TasksController < ApplicationController
 
 
   def destroy
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_user.contacts.find(params[:contact_id])
     @task = @contact.tasks.find(params[:id])
     @task.destroy
     redirect_to contact_path(@contact)

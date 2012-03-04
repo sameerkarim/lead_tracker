@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+			<th>Contact</th>
+      <th>Title</th>
+      <th>Description</th>
+			<th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <tbody>
+	    <% @contacts.each do |contact| %>
+			<% contact.tasks.each do |task| %>
+	      <tr>
+					<td><%= link_to contact.name, contact_path(contact) %></td>
+	        <td><%= task.title %></td>
+					<td><%= task.description %></td>
+					<td><%= task.priority %></td>
+	        <td>
+	          <%= link_to 'Edit', '#', :class => 'btn btn-mini' %>
+	          <%= link_to 'Delete', [task.contact, task], 
+																	:confirm => 'Are you sure?', :method => :delete, 
+																	:class => 'btn btn-mini btn-danger' %>
+	        </td>
+	      </tr>
+			<% end %>
+	    <% end %>
+	  </tbody>
+	</table>

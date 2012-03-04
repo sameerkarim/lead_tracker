@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304101408) do
+ActiveRecord::Schema.define(:version => 20120304105651) do
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(:version => 20120304101408) do
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
+
+  add_index "contacts", ["user_id", "created_at"], :name => "index_contacts_on_user_id_and_created_at"
 
   create_table "tasks", :force => true do |t|
     t.string   "title"
