@@ -14,7 +14,7 @@
       <tr>
         <td><%= link_to contact.name, contact_path(contact) %></td>
         <td><%= contact.title %></td>
-				<td><%= contact.title %></td>
+				<td><%= contact.company %></td>
 				<td><%= link_to contact.tasks.count, tasks_path %></td>
         <td>
           <%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-mini' %>
