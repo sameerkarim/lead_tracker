@@ -1,0 +1,24 @@
+<h1>All users</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>User Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+			<tr>
+			  <td><%= gravatar_for(user, size: 30) %></td>
+			  <td><%= link_to user.name, user %></td>
+			  <td>
+				<% if current_user.admin? && !current_user?(user) %>
+			    <%= link_to 'Delete', user, :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+				<% end %>
+			  </td>
+			</tr>
+			<% end %>
+  </tbody>
+</table>

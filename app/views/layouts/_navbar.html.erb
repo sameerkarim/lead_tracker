@@ -9,9 +9,8 @@
       <a class="brand" href="/">Lead Tracker</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Dashboard", root_path %></li>
 					<% if signed_in? %>
-						<li><%= link_to "Profile", current_user %></li>
+						<li><%= link_to "Dashboard", current_user %></li>
 						<li><%= link_to "Settings", edit_user_path(current_user) %></li>
 					<% end %>
 					<li><%= link_to "Contacts", contacts_path %></li>
@@ -19,6 +18,19 @@
           <li><%= link_to "Tasks" %></li>
         </ul>
 				<ul class="nav pull-right">
+					<% if signed_in? && current_user.admin? %>
+						<li class="dropdown">
+						    <a href="#"
+						          class="dropdown-toggle"
+						          data-toggle="dropdown">
+						          Hey, admin
+						          <b class="caret"></b>
+						    </a>
+						    <ul class="dropdown-menu">
+										<li class="pull-right"><%= link_to "Manage users", users_path %></li>
+						    </ul>
+						</li>
+					<% end %>
 					<% if signed_in? %>
 						<li class="pull-right"><%= link_to "Sign out", signout_path, method: :delete %></li>
 					<% else %>

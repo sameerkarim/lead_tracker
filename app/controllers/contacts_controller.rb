@@ -1,4 +1,8 @@
 class ContactsController < ApplicationController
+    before_filter :signed_in_user # , only: [:index, :show, :edit, :update]
+    #Will need to uncomment the line below and the block below the private below when I get the user relationship worked out
+    #before_filter :correct_user#  ,   only: [:index, :show, :edit, :update]
+  
   # GET /contacts
   # GET /contacts.json
   def index
@@ -82,4 +86,20 @@ class ContactsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+private
+  
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_path, notice: "Please sign in." unless signed_in?
+    end
+  end
+
+#Will need to uncomment the below code when I get the user>contacts relationship worked out  
+#  def correct_user
+#    @user = User.find(params[:id])
+#    redirect_to(root_path) unless current_user?(@user)
+#  end
 end
