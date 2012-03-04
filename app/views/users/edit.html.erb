@@ -2,6 +2,11 @@
 
 <%= render 'shared/error_messages' %>
 
+<div>
+  <%= gravatar_for(@user) %>
+  <a href="http://gravatar.com/emails">change</a>
+</div>
+
 <fieldset>
 	<legend><%= controller.action_name.capitalize %> User</legend>
 
@@ -34,9 +39,11 @@
 	</div>
 
    <div class="form-actions">
-    <%= f.submit "Sign up", :class => 'btn btn-primary' %>
-    <%= link_to 'Cancel', contacts_path, :class => 'btn' %>
+    <%= f.submit "Update", :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', root_path, :class => 'btn' %>
   </div>
 
   </fieldset>
 <% end %>
+
+

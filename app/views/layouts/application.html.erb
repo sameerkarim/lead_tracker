@@ -16,9 +16,11 @@
   <div class="container">
 		<% if flash.any? %>
 			<% if flash[:error] %>
-			<div class="alert alert-error">
+				<div class="alert alert-error">
+			<% elsif flash[:notice]%>
+				<div class="alert alert-warning">
 			<% else %>
-			<div class="alert alert-success">
+				<div class="alert alert-success">
 			<% end %>
 				<a class="close" data-dismiss="alert">×</a>
 					<% flash.each do |key, value| %>
