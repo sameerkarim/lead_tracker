@@ -11,6 +11,13 @@
     </div>
 
     <div class="control-group">
+      <%= f.label :task_type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :task_type, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
       <%= f.label :description, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :description, :class => 'text_field' %>
@@ -21,6 +28,20 @@
       <%= f.label :priority, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :priority, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :target_date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :target_date, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :actual_date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :actual_date, :class => 'text_field' %>
       </div>
     </div>
 

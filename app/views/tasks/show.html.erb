@@ -1,0 +1,43 @@
+<div class="row-fluid">
+
+			<h1>Task</h1>
+			<p>for <%= link_to @contact.name, contact_path(@contact) %></p>
+
+		<p>
+		  <b>Task title</b><br>
+		  <%= @task.title %>
+		</p>
+
+		<p>
+		  <b>Task Type</b><br>
+		  <%= @task.task_type %>
+		</p>
+
+		<p>
+		  <b>Description</b><br>
+		  <%= @task.description %>
+		</p>
+
+		<p>
+		  <b>Priority</b><br>
+		  <%= @task.priority %>
+		</p>
+	
+		<p>
+		  <b>Target date</b><br>
+		  <%= @task.target_date %>
+		</p>		
+
+		<p>
+		  <b>Actual date</b><br>
+		  <%= @task.actual_date %>
+		</p>
+		
+		<div class="form-actions">
+		  <%= link_to 'Back', contact_path(@contact), :class => 'btn'  %>
+		  <%= link_to 'Edit', edit_contact_task_path(@contact, @task), :class => 'btn' %>
+		  <%= link_to 'Delete', [@contact, @task], 
+														:confirm => 'Are you sure?', :method => :delete, 
+														:class => 'btn btn-danger' %>
+		</div>
+</div>

@@ -25,7 +25,7 @@ class TasksController < ApplicationController
 
   def show
     @contact = current_user.contacts.find(params[:contact_id])
-    @task = @contact.tasks.build(params[:task])
+    @task = @contact.tasks.find(params[:id])
     #@task = @contact.tasks.find(params[:id])
     
      respond_to do |format|

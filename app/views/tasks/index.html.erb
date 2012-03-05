@@ -21,7 +21,7 @@
 					<% contact.tasks.each do |task| %>
 	        <tr>
 					<td></td>
-					<td><%= task.title %></td>
+					<td><%= link_to task.title, contact_task_path(task.contact, task) %></td>
 					<td><%= task.description %></td>
 					<td><%= task.priority %></td>
 	        <td>
