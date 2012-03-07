@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+
+
+en:
+  date:
+    formats:
+      slashes: "%m/%d/%Y"

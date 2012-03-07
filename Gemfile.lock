@@ -59,6 +59,9 @@ GEM
     jquery-rails (2.0.0)
       railties (< 5.0, >= 3.2.0.beta)
       thor (~> 0.14)
+    jquery-ui-rails (0.2.2)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.6.5)
     less (2.0.9)
       commonjs (~> 0.2.0)
@@ -143,6 +146,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
   jquery-rails (= 2.0.0)
+  jquery-ui-rails
   pg (= 0.12.2)
   rails (= 3.2.1)
   sass-rails (= 3.2.3)

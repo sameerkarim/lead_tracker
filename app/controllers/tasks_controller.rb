@@ -21,6 +21,11 @@ class TasksController < ApplicationController
   def edit
     @contact = current_user.contacts.find(params[:contact_id])
     @task = @contact.tasks.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.json
+    end   
   end
 
   def show

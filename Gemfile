@@ -18,6 +18,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'twitter-bootstrap-rails' #uncomment to use twitter bootstrap!
+  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails', '2.0.0'
