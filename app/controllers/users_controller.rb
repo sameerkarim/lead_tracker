@@ -11,6 +11,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @contacts = @user.contacts.all
+    
+    #return count of tasks by contact for the dashboard page
+    @tasks_count = Hash.new(0)
+    @contacts.each do |contact|
+      @tasks_count[contact.name] += contact.tasks.count
+    end
+    
+    #return count of leads by contact for the dashboard page
+    @leads_count = Hash.new(0)
+    @contacts.each do |contact|
+      @leads_count[contact.name] += contact.leads.count
+    end
   end
   
   def new

@@ -2,3 +2,23 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+
+<h2>Total Contacts</h2>
+
+<div class="container">
+  <div class="row-fluid">
+		<div class="span2"></div>
+    	<div class="span8">
+				<p>Total number of contacts: <%= @contacts.count %></p>
+				<h4>Summary of total tasks:</h4>
+				<% @tasks_count.each do |task_count_key, task_count_value| %>
+					<p><%= task_count_key %>: <%= task_count_value %></p>
+				<% end %>
+					<h4>Summary of total leads and open items:</h4>
+					<% @leads_count.each do |lead_count_key, lead_count_value| %>
+						<p><%= lead_count_key %>: <%= lead_count_value %></p>
+					<% end %>
+			</div>
+		<div class="span2"></div>
+  </div>
+</div>

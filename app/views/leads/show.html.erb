@@ -1,0 +1,33 @@
+<div class="row-fluid">
+
+			<h1>Lead</h1>
+			<p>for <%= link_to @contact.name, contact_path(@contact) %></p>
+
+		<p>
+		  <b>Lead title</b><br>
+		  <%= @lead.title %>
+		</p>
+
+		<p>
+		  <b>Description</b><br>
+		  <%= @lead.description %>
+		</p>
+
+		<p>
+		  <b>Notes</b><br>
+		  <%= @lead.notes %>
+		</p>
+	
+		<p>
+		  <b>Target date</b><br>
+		  <%= @lead.target_date %>
+		</p>		
+		
+		<div class="form-actions">
+		  <%= link_to 'Back', contact_path(@contact), :class => 'btn'  %>
+		  <%= link_to 'Edit', edit_contact_lead_path(@contact, @lead), :class => 'btn' %>
+		  <%= link_to 'Delete', [@contact, @lead], 
+														:confirm => 'Are you sure?', :method => :delete, 
+														:class => 'btn btn-danger' %>
+		</div>
+</div>

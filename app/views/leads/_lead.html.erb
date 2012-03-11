@@ -1,0 +1,26 @@
+<table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+			<th>Target Date</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <tbody>
+	    <% @contact.leads.each do |lead| %>
+	      <tr>
+	        <td><%= link_to lead.title, contact_lead_path(lead.contact, lead) %></td>
+					<td><%= lead.description %></td>
+					<td><%= lead.target_date %></td>
+	        <td>
+	          <%= link_to 'Edit', edit_contact_lead_path(lead.contact, lead), :class => 'btn btn-mini' %>
+	          <%= link_to 'Delete', [lead.contact, lead], 
+																	:confirm => 'Are you sure?', :method => :delete, 
+																	:class => 'btn btn-mini btn-danger' %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+<%= link_to 'New', new_contact_lead_path(@contact), :class => 'btn btn-primary' %>
