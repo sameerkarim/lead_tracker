@@ -3,15 +3,18 @@ LeadTracker::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :contacts, only: [:create, :destroy]
   resources :tasks
+# resources :leads #I'm not sure if I need this or not since I have the one nested under contacts below
   
   resources :contacts do
     resources :tasks
+    resources :leads
   end 
    
   match '/signup', to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/tasks', to: 'tasks#index'
+  match '/leads', to: 'leads#index'
   
   get "home/index"
   

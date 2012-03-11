@@ -1,0 +1,37 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+			<th>Contact</th>
+      <th>Lead title</th>
+      <th>Description</th>
+			<th>Target date</th>
+			<th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <tbody>
+	    <% @contacts.each do |contact| %>
+				<tr>
+					<td><h4><%= link_to contact.name, contact_path(contact) %></h4></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+					<% contact.leads.each do |lead| %>
+	        <tr>
+					<td></td>
+					<td><%= link_to lead.title, contact_lead_path(lead.contact, lead) %></td>
+					<td><%= lead.description %></td>
+					<td><%= lead.target_date %></td>
+	        <td>
+	          <%= link_to 'Edit', edit_contact_lead_path(lead.contact, lead), :class => 'btn btn-mini' %>
+	          <%= link_to 'Delete', [lead.contact, lead], 
+																	:confirm => 'Are you sure?', :method => :delete, 
+																	:class => 'btn btn-mini btn-danger' %>
+	        </td>
+	      </tr>
+					<% end %>
+	    <% end %>
+	  </tbody>
+	</table>
