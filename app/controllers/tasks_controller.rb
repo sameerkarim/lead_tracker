@@ -56,7 +56,7 @@ class TasksController < ApplicationController
   
   def new
     @contact = current_user.contacts.find(params[:contact_id])
-    @task = @contact.tasks.create(params[:id])
+    @task = @contact.tasks.create(params[:id]) #3/8/2012 note: I'm pretty sure this should be :task, not :id!
     
     # respond_to do |format|
     #   format.html # new.html.erb
