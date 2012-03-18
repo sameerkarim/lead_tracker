@@ -8,7 +8,6 @@
 			<th style="text-align:center">Tasks</th>
 			<th style="text-align:center">Leads</th>
 			<th style="text-align:center">Time since last contact</th>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -24,10 +23,6 @@
 				<% else %>
 				<td style="text-align:center"><%= custom_time_ago_in_words(contact.contact_activities.last.activity_date) %></td>
 				<% end %>
-        <td>
-          <%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', contact_path(contact), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>
