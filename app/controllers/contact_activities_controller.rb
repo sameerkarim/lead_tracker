@@ -56,12 +56,12 @@ class ContactActivitiesController < ApplicationController
   
    def new
      @contact = current_user.contacts.find(params[:contact_id])
-     @contact_activity = @contact.contact_activities.create(params[:contact_activity]) #3/8/2012 note: I'm pretty sure this should be :task, not :id!
-  
-     respond_to do |format|
-        format.html # new.html.erb
-        format.json { render json: @contact }
-      end
+     @contact_activity = @contact.contact_activities.create(params[:id]) #3/8/2012 note: I'm pretty sure this should be :task, not :id!
+ 
+     # respond_to do |format|
+     #    format.html # new.html.erb
+     #    format.json { render json: @contact }
+     #  end
   
    end
   
