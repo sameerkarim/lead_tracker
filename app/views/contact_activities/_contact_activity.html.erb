@@ -1,0 +1,24 @@
+<table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th>Activity Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <tbody>
+	    <% @contact.contact_activities.each do |contact_activity| %>
+	      <tr>
+	        <td><%= link_to contact_activity.activity_date, contact_contact_activity_path(contact_activity.contact, contact_activity) %></td>
+					<td><%= contact_activity.description %></td>
+	        <td>
+	          <%= link_to 'Edit', edit_contact_contact_activity_path(contact_activity.contact, contact_activity), :class => 'btn btn-mini' %>
+	          <%= link_to 'Delete', [contact_activity.contact, contact_activity], 
+																	:confirm => 'Are you sure?', :method => :delete, 
+																	:class => 'btn btn-mini btn-danger' %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+<%= link_to 'New', new_contact_contact_activity_path(@contact), :class => 'btn btn-primary' %>

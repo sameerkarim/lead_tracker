@@ -1,0 +1,23 @@
+<div class="row-fluid">
+
+			<h1>Contact Activity</h1>
+			<p>for <%= link_to @contact.name, contact_path(@contact) %></p>
+
+		<p>
+		  <b>Activity date</b><br>
+		  <%= @contact_activity.activity_date %>
+		</p>
+
+		<p>
+		  <b>Description</b><br>
+		  <%= @contact_activity.description %>
+		</p>
+		
+		<div class="form-actions">
+		  <%= link_to 'Back', contact_path(@contact), :class => 'btn'  %>
+		  <%= link_to 'Edit', edit_contact_contact_activity_path(@contact, @contact_activity), :class => 'btn' %>
+		  <%= link_to 'Delete', [@contact, @contact_activity], 
+														:confirm => 'Are you sure?', :method => :delete, 
+														:class => 'btn btn-danger' %>
+		</div>
+</div>

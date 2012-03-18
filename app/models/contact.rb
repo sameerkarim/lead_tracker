@@ -5,6 +5,7 @@ class Contact < ActiveRecord::Base
   
   has_many :tasks, :dependent => :destroy
   has_many :leads, dependent: :destroy
+  has_many :contact_activities, dependent: :destroy
   belongs_to :user
   
   #default_scope order: 'contacts.created_at DESC'

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_date: 2012-03-18
+  description: MyText
+  contact: 
+
+two:
+  activity_date: 2012-03-18
+  description: MyText
+  contact: 

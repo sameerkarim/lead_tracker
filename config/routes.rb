@@ -2,12 +2,13 @@ LeadTracker::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :contacts, only: [:create, :destroy]
-  resources :tasks
+  resources :tasks #3/18/2012 - pretty sure I don't need this line
 # resources :leads #I'm not sure if I need this or not since I have the one nested under contacts below
   
   resources :contacts do
     resources :tasks
     resources :leads
+    resources :contact_activities
   end 
    
   match '/signup', to: 'users#new'
